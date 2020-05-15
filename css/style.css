@@ -1,4 +1,6 @@
 /* css soft reset */
+/* '.'(dot) means class */
+/* the element without simbol means the tag itself */
 * {
 	margin: 0;
 	padding: 0;
@@ -11,15 +13,14 @@
 	--secondary-purple: #200C3C;
 }
 
-/* the element without simbol means the tag itself */
 body {
-	background: var(--secondary-purple);
-	background-size: auto 100vh;
+	background:	var(--secondary-purple);
+	background-size: auto auto;
+	background-image: linear-gradient(to bottom right, var(--primary-purple), var(--secondary-purple));
 	font-family: Arial;
 }
 
-header,
-section {
+header {
 	height: 100vh;
 }
 
@@ -27,16 +28,26 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: linear-gradient(to bottom right, var(--primary-purple), var(--secondary-purple));
 }
 
-/* '.'(dot) means class */
+a {
+	text-decoration: none;
+	color: var(--primary-purple);
+}
+
+.title-separator {
+	margin: 16px 30%;
+	border-width: 0.5px;
+}
+
+/* Nav bar */
 .menu {
 	background-color: white;
 	/* height: 44px; */
 	width: 100vw;
 	position: fixed;
 	top: 0;
+	z-index: 1;
 }
 .menu ul {
 	display: flex;
@@ -49,26 +60,39 @@ header {
 	padding: 16px 32px;
 	display: block;
 }
-
-a {
-	text-decoration: none;
-	color: var(--primary-purple);
-}
-a:hover {
+.menu a:hover {
 	color: var(--secondary-purple);
 	background-color: whitesmoke;
 }
 
-.site-title, 
-.site-subtitle,
+.header-titles,
 .section-title,
 figcaption {
 	color: whitesmoke;
 	text-align: center;
 }
 
+section {
+	min-height: 100vh;
+}
+
 .section-title {
 	margin-top: 1.5em;
+}
+
+.header-titles {
+	animation: linear 0.5s titleAnimation;
+}
+
+@keyframes titleAnimation {
+	from {
+		transform: scale(0.2) translateZ(-50vh);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1) translateY(0);
+		opacity: 1;
+	}
 }
 
 /* In this next block, we can rewrite any style
@@ -99,6 +123,7 @@ figcaption {
 	padding: 1.5em;
 	height: 256px;
 	width: 256px;
+	transition: transform 0.3s;
 	object-fit: cover;
 	/* this next property changes the axes of the image
 	first paramenter is X axes
@@ -108,7 +133,7 @@ figcaption {
 }
 
 .img-project:hover {
-	filter: blur(4px);
+	transform: scale(1.3);
 }
 
 @media (min-width: 560px) {
@@ -125,4 +150,21 @@ figcaption {
 	.projects .grid {
 		grid-template-columns: 384px 384px;
 	}
+}
+
+/* Contact Section */
+.contact {
+	text-align: center;
+}
+
+.contact a {
+	font-size: 4em;
+	color: whitesmoke;
+	margin: 16px;
+	transition: text-shadow 0.3s;
+}
+
+.contact a:hover,
+.contact a:active { 
+	text-shadow: #ccac00 2px 2px;
 }
