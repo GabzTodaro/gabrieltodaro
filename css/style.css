@@ -1,131 +1,169 @@
 /* css soft reset */
+
+
 /* '.'(dot) means class */
+
+
 /* the element without simbol means the tag itself */
+
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+
 /* global variables */
+
 :root {
-	--primary-purple: #6e288b;
-	--secondary-purple: #200C3C;
+    --primary-purple: #6e288b;
+    --secondary-purple: #200C3C;
 }
 
 body {
-	background:	var(--secondary-purple);
-	background-size: auto auto;
-	background-image: linear-gradient(to bottom right, var(--primary-purple), var(--secondary-purple));
-	font-family: Arial;
-}
-
-header {
-	height: 100vh;
-}
-
-header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    background: var(--secondary-purple);
+    background-size: auto auto;
+    background-image: linear-gradient(to bottom right, var(--primary-purple), var(--secondary-purple));
+    font-family: Arial;
+    font-size: 16px;
 }
 
 a {
-	text-decoration: none;
-	color: var(--primary-purple);
+    text-decoration: none;
+    color: var(--primary-purple);
+}
+
+header,
+section {
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .title-separator {
-	margin: 16px 30%;
-	border-width: 0.5px;
+    margin: 16px 30%;
+    border-width: 0.5px;
 }
 
+
 /* Nav bar */
+
 .menu {
-	background-color: white;
-	/* height: 44px; */
-	width: 100vw;
-	position: fixed;
-	top: 0;
-	z-index: 1;
+    background-color: white;
+    /* height: 44px; */
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
+
 .menu ul {
-	display: flex;
-	justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
+
 .menu li {
-	list-style: none;
+    list-style: none;
 }
+
 .menu a {
-	padding: 16px 32px;
-	display: block;
+    padding: 16px 32px;
+    display: block;
 }
+
 .menu a:hover {
-	color: var(--secondary-purple);
-	background-color: whitesmoke;
+    color: var(--secondary-purple);
+    background-color: whitesmoke;
 }
 
 .header-titles,
 .section-title,
 figcaption {
-	color: whitesmoke;
-	text-align: center;
-}
-
-section {
-	min-height: 100vh;
-}
-
-.section-title {
-	margin-top: 1.5em;
+    color: whitesmoke;
+    text-align: center;
 }
 
 .header-titles {
-	animation: linear 0.5s titleAnimation;
+    animation: linear 0.5s titleAnimation;
+}
+
+.section-title {
+    padding-top: 65px;
 }
 
 @keyframes titleAnimation {
-	from {
-		transform: scale(0.2) translateZ(-50vh);
-		opacity: 0;
-	}
-	to {
-		transform: scale(1) translateY(0);
-		opacity: 1;
-	}
+    from {
+        transform: scale(0.2) translateZ(-50vh);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
 }
+
 
 /* In this next block, we can rewrite any style
 	and this will be overriden for screens wider than 800px 
 	We can use this for EVERYTHING!! */
-	@media (min-width: 800px) {
-		.site-title h1 {
-			font-size: 4em;
-		}
-	}
 
 .site-subtitle,
 .portfolio h2,
 figcaption {
-	font-style: italic;
+    font-style: italic;
 }
 
+
+/* About section */
+
+.img-about {
+    width: 300px;
+    height: 300px;
+    margin: 1.5em;
+}
+
+.section-about p {
+    text-indent: 0.5em;
+    color: white;
+    margin: 16px;
+}
+
+.section-about .img-about {
+    border-radius: 50%;
+}
+
+.section-about .avatar {
+    float: left;
+}
+
+
 /* Portfolio section */
+
 .projects .grid {
-	display: grid;
-	gap: 2em;
-	text-align: center;
-	justify-content: center;
-	height: fit-content;
+    display: grid;
+    gap: 2em;
+    text-align: center;
+    justify-content: center;
+    height: fit-content;
 }
 
 .img-project {
-	padding: 1.5em;
-	height: 256px;
-	width: 256px;
-	transition: transform 0.3s;
-	object-fit: cover;
-	/* this next property changes the axes of the image
+    padding: 1.5em;
+    margin: 1.5m;
+    height: 256px;
+    width: 256px;
+    transition: transform 0.3s;
+    object-fit: cover;
+    /* this next property changes the axes of the image
 	first paramenter is X axes
 	second parameter is Y axes
 	object-position: 100px 100px; 
@@ -133,38 +171,66 @@ figcaption {
 }
 
 .img-project:hover {
-	transform: scale(1.3);
+    transform: scale(1.3);
 }
 
-@media (min-width: 560px) {
-	.projects .grid {
-		grid-template-columns: 256px 256px;
-	}
+.div-projects {
+    background-color: grey;
+    border-radius: 16px;
 }
-@media (min-width: 820px) {
-	.projects .grid {
-		grid-template-columns: 256px 256px 256px;
-	}
-}
-@media (min-width: 1100px) {
-	.projects .grid {
-		grid-template-columns: 384px 384px;
-	}
-}
+
 
 /* Contact Section */
+
 .contact {
-	text-align: center;
+    text-align: center;
 }
 
 .contact a {
-	font-size: 4em;
-	color: whitesmoke;
-	margin: 16px;
-	transition: text-shadow 0.3s;
+    font-size: 4em;
+    color: whitesmoke;
+    margin: 16px;
+    transition: text-shadow 0.3s;
 }
 
 .contact a:hover,
-.contact a:active { 
-	text-shadow: #ccac00 2px 2px;
+.contact a:active {
+    text-shadow: #ccac00 2px 2px;
+}
+
+
+/* Footer */
+
+.footer .footer-paragraph {
+    text-align: right;
+    color: grey;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 560px) {
+    .projects .grid {
+        grid-template-columns: 256px 256px;
+    }
+}
+
+@media (min-width: 820px) {
+    .projects .grid {
+        grid-template-columns: 256px 256px 256px;
+    }
+    .site-title h1 {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+    .projects .grid {
+        grid-template-columns: 384px 384px;
+    }
+    body {
+        font-size: 18px;
+    }
 }
