@@ -16,15 +16,17 @@
 /* global variables */
 
 :root {
-    --primary-purple: #6e288b;
-    --secondary-purple: #200C3C;
+    --primary-purple: #6D288A;
+    --secondary-purple: #40065A;
+    --third-purple: #4A308F;
+    --primary-golden: #D1B934;
 }
 
 body {
     background: var(--secondary-purple);
     background-size: auto auto;
     background-image: linear-gradient(to bottom right, var(--primary-purple), var(--secondary-purple));
-    font-family: Arial;
+    font-family: 'Roboto Mono', monospace;
     font-size: 16px;
 }
 
@@ -51,7 +53,7 @@ header {
 
 .title-separator {
     margin: 16px 30%;
-    border-width: 0.5px;
+    border: 0.5px solid var(--primary-golden);
 }
 
 
@@ -85,6 +87,10 @@ header {
     background-color: whitesmoke;
 }
 
+.menu a:active {
+    color: var(--secondary-purple);
+}
+
 .header-titles,
 .section-title,
 figcaption {
@@ -94,6 +100,18 @@ figcaption {
 
 .header-titles {
     animation: linear 0.5s titleAnimation;
+}
+
+.site-title {
+    font-weight: 700;
+}
+
+.site-subtitle {
+    font-weight: 100;
+}
+
+.header-titles span {
+    color: var(--primary-golden);
 }
 
 .section-title {
@@ -110,11 +128,6 @@ figcaption {
         opacity: 1;
     }
 }
-
-
-/* In this next block, we can rewrite any style
-	and this will be overriden for screens wider than 800px 
-	We can use this for EVERYTHING!! */
 
 .site-subtitle,
 .portfolio h2,
@@ -145,6 +158,48 @@ figcaption {
     float: left;
 }
 
+.word-carousel div {
+    overflow: hidden;
+    position: relative;
+    float: inline-start;
+    height: 65px;
+    padding-top: 0px;
+    margin-top: -5px;
+}
+
+.word-carousel li {
+    padding: 0 10px;
+    height: 40px;
+    margin-bottom: 40px;
+    display: block;
+    color: var(--primary-golden);
+}
+
+.flip2 {
+    animation: flip2 4s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+
+@keyframes flip2 {
+    0% {
+        margin-top: -180px;
+    }
+    5% {
+        margin-top: -90px;
+    }
+    50% {
+        margin-top: -90px;
+    }
+    55% {
+        margin-top: 0px;
+    }
+    99.99% {
+        margin-top: 0px;
+    }
+    100% {
+        margin-top: -180px;
+    }
+}
+
 
 /* Portfolio section */
 
@@ -163,11 +218,6 @@ figcaption {
     width: 256px;
     transition: transform 0.3s;
     object-fit: cover;
-    /* this next property changes the axes of the image
-	first paramenter is X axes
-	second parameter is Y axes
-	object-position: 100px 100px; 
-	*/
 }
 
 .img-project:hover {
@@ -175,7 +225,7 @@ figcaption {
 }
 
 .div-projects {
-    background-color: grey;
+    background-color: var(--primary-golden);
     border-radius: 16px;
 }
 
@@ -184,6 +234,7 @@ figcaption {
 
 .contact {
     text-align: center;
+    height: 50vh;
 }
 
 .contact a {
@@ -195,7 +246,7 @@ figcaption {
 
 .contact a:hover,
 .contact a:active {
-    text-shadow: #ccac00 2px 2px;
+    text-shadow: var(--primary-golden) 2px 2px;
 }
 
 
@@ -208,6 +259,14 @@ figcaption {
     margin-bottom: 30px;
 }
 
+.footer a {
+    color: var(--primary-golden);
+}
+
+.footer a:hover {
+    color: whitesmoke;
+}
+
 @media (min-width: 560px) {
     .projects .grid {
         grid-template-columns: 256px 256px;
@@ -216,19 +275,13 @@ figcaption {
 
 @media (min-width: 820px) {
     .projects .grid {
-        grid-template-columns: 256px 256px 256px;
-    }
-    .site-title h1 {
-        font-size: 1em;
+        grid-template-columns: 384px 384px;
     }
 }
 
 @media (min-width: 1200px) {
     .container {
         max-width: 1200px;
-    }
-    .projects .grid {
-        grid-template-columns: 384px 384px;
     }
     body {
         font-size: 18px;
