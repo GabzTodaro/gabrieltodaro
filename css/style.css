@@ -271,11 +271,19 @@ figcaption {
     .projects .grid {
         grid-template-columns: 256px 256px;
     }
+    .img-about {
+        width: 400px;
+        height: 400px;
+    }
 }
 
 @media (min-width: 820px) {
     .projects .grid {
         grid-template-columns: 384px 384px;
+    }
+    .img-about {
+        width: 600px;
+        height: 600px;
     }
 }
 
