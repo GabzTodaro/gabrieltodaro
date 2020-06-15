@@ -102,6 +102,10 @@ figcaption {
     animation: linear 0.5s titleAnimation;
 }
 
+.header-titles .img-about {
+    border-radius: 50%;
+}
+
 .site-title {
     font-weight: 700;
 }
@@ -116,6 +120,18 @@ figcaption {
 
 .section-title {
     padding-top: 65px;
+}
+
+.title-contact-links {
+    font-size: 2em;
+    color: whitesmoke;
+    margin: 16px;
+    transition: text-shadow 0.3s;
+}
+
+.title-contact-links a:hover,
+.title-contact-links a:active {
+    text-shadow: var(--primary-golden) 2px 2px;
 }
 
 @keyframes titleAnimation {
@@ -148,10 +164,6 @@ figcaption {
     text-indent: 0.5em;
     color: white;
     margin: 16px;
-}
-
-.section-about .img-about {
-    border-radius: 50%;
 }
 
 .section-about .avatar {
@@ -235,18 +247,6 @@ figcaption {
 .contact {
     text-align: center;
     height: 50vh;
-}
-
-.contact a {
-    font-size: 4em;
-    color: whitesmoke;
-    margin: 16px;
-    transition: text-shadow 0.3s;
-}
-
-.contact a:hover,
-.contact a:active {
-    text-shadow: var(--primary-golden) 2px 2px;
 }
 
 
