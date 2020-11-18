@@ -16,15 +16,15 @@
 /* global variables */
 
 :root {
-    --primary-purple: #6D288A;
-    --secondary-purple: #40065A;
-    --primary-grey: #222222;
-    --third-purple: #4A308F;
-    --primary-golden: #D1B934;
+    --vivid-violet: #6D288A;
+    --indigo: #40065A;
+    --nero: #222222;
+    --windsor: #4A308F;
+    --old-gold: #D1B934;
 }
 
 body {
-    background: var(--primary-grey);
+    background: var(--nero);
     background-size: auto auto;
     /* background-image: linear-gradient(to bottom right, var(--secondary-purple), var(--primary-grey)); */
     font-family: 'Roboto Mono', monospace;
@@ -33,7 +33,7 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--primary-purple);
+    color: var(--vivid-violet);
 }
 
 header,
@@ -54,7 +54,7 @@ header {
 
 .title-separator {
     margin: 16px 30%;
-    border: 0.5px solid var(--primary-golden);
+    border: 0.5px solid var(--old-gold);
 }
 
 
@@ -84,12 +84,12 @@ header {
 }
 
 .menu a:hover {
-    color: var(--secondary-purple);
+    color: var(--indigo);
     background-color: whitesmoke;
 }
 
 .menu a:active {
-    color: var(--secondary-purple);
+    color: var(--indigo);
 }
 
 .header-titles,
@@ -116,7 +116,7 @@ figcaption {
 }
 
 .header-titles span {
-    color: var(--primary-golden);
+    color: var(--old-gold);
 }
 
 .section-title {
@@ -132,7 +132,7 @@ figcaption {
 
 .title-contact-links a:hover,
 .title-contact-links a:active {
-    text-shadow: var(--primary-golden) 2px 2px;
+    text-shadow: var(--old-gold) 2px 2px;
 }
 
 @keyframes titleAnimation {
@@ -185,7 +185,7 @@ figcaption {
     height: 40px;
     margin-bottom: 40px;
     display: block;
-    color: var(--primary-golden);
+    color: var(--old-gold);
 }
 
 .flip2 {
@@ -238,7 +238,7 @@ figcaption {
 }
 
 .div-projects {
-    background-color: var(--primary-golden);
+    background-color: var(--old-gold);
     border-radius: 16px;
 }
 
@@ -261,7 +261,7 @@ figcaption {
 }
 
 .footer a {
-    color: var(--primary-golden);
+    color: var(--old-gold);
 }
 
 .footer a:hover {
