@@ -18,14 +18,15 @@
 :root {
     --primary-purple: #6D288A;
     --secondary-purple: #40065A;
+    --primary-grey: #222222;
     --third-purple: #4A308F;
     --primary-golden: #D1B934;
 }
 
 body {
-    background: var(--secondary-purple);
+    background: var(--primary-grey);
     background-size: auto auto;
-    background-image: linear-gradient(to bottom right, var(--primary-purple), var(--secondary-purple));
+    /* background-image: linear-gradient(to bottom right, var(--secondary-purple), var(--primary-grey)); */
     font-family: 'Roboto Mono', monospace;
     font-size: 16px;
 }
