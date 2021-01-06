@@ -184,7 +184,7 @@ figcaption {
     color: whitesmoke;
 }
 
-@media (min-width: 560px) {
+@media (min-width: 360px) {
     .carousel-slide {
         max-width: 100%;
     }
